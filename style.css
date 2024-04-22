@@ -1,5 +1,31 @@
-body, h1, h2, input, button {
-    font-family: Arial, sans-serif;
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Aligns children vertically */
+    width: 100%;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height to center this page vertically */
+    text-align: center;
+    width: 300px;
+    margin: auto; /* Centers horizontally */
+}
+
+#passwordInput {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#submitBtn {
+    display: block;
+    margin-left: auto;
+    width: 100px;
 }
 
 .hidden {
@@ -7,34 +33,37 @@ body, h1, h2, input, button {
 }
 
 .page {
-    margin: 20px;
+    width: 100%; /* Ensures full width */
+    margin: 20px 0;
 }
 
-input[type="password"] {
-    margin: 10px 0;
+input[type="password"], button {
     padding: 8px;
-}
-
-button {
-    padding: 8px 16px;
-    cursor: pointer;
+    margin-top: 10px;
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item {
-    padding: 10px;
+    font-weight: bold;
     cursor: pointer;
-    border: 1px solid transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ccc;
 }
 
 .menu-item.active {
-    border-color: black;
+    color: #333;
+    background-color: #ddd;
 }
+
 
 
 

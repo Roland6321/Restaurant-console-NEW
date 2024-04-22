@@ -1,6 +1,6 @@
 document.getElementById('submitBtn').addEventListener('click', function() {
     var password = document.getElementById('passwordInput').value;
-    if (password === '1234') {
+    if (password === '1234') { // Assuming '1234' is your test password
         document.getElementById('welcome').classList.add('hidden');
         document.getElementById('activeOrders').classList.remove('hidden');
     } else {
