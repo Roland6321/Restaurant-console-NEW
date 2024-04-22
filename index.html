@@ -1,2 +1,33 @@
-<h1>Hello!</h1>
-<h1>bye!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktuel Restaurant Console</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcome" class="page">
+        <h1>Welcome to the restaurant console of Aktuel</h1>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button id="submitBtn">Submit</button>
+        <div id="alert" class="hidden">Incorrect password</div>
+    </div>
+    <div id="activeOrders" class="page hidden">
+        <div class="menu">
+            <div id="ordersBtn" class="menu-item active">Active Orders</div>
+            <div id="historyBtn" class="menu-item">Order History</div>
+        </div>
+        <h2>Active Orders</h2>
+    </div>
+    <div id="orderHistory" class="page hidden">
+        <div class="menu">
+            <div id="ordersBtnHistory" class="menu-item">Active Orders</div>
+            <div id="historyBtnHistory" class="menu-item active">Order History</div>
+        </div>
+        <h2>Order History</h2>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

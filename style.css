@@ -1,1 +1,43 @@
+body, h1, h2, input, button {
+    font-family: Arial, sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+.page {
+    margin: 20px;
+}
+
+input[type="password"] {
+    margin: 10px 0;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.menu-item.active {
+    border-color: black;
+}
+
+
+
+
+
 
