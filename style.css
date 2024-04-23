@@ -5,8 +5,14 @@ body {
     width: 100%;
 }
 
+.page {
+    display: none; /* All pages hidden by default */
+    width: 100%; /* Ensures full width */
+    margin: 20px 0;
+}
+
 #welcome {
-    display: flex;
+    display: flex; /* Only the welcome page is visible initially */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -14,6 +20,11 @@ body {
     text-align: center;
     width: 300px;
     margin: auto; /* Centers horizontally */
+}
+
+input[type="password"], button {
+    padding: 8px;
+    margin-top: 10px;
 }
 
 #passwordInput {
@@ -26,20 +37,6 @@ body {
     display: block;
     margin-left: auto;
     width: 100px;
-}
-
-.hidden {
-    display: none;
-}
-
-.page {
-    width: 100%; /* Ensures full width */
-    margin: 20px 0;
-}
-
-input[type="password"], button {
-    padding: 8px;
-    margin-top: 10px;
 }
 
 .menu {
@@ -62,6 +59,12 @@ input[type="password"], button {
 .menu-item.active {
     color: #333;
     background-color: #ddd;
+}
+
+#alert {
+    display: none; /* Ensure the alert is not visible initially */
+    color: red;
+    margin-top: 10px;
 }
 
 
