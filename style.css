@@ -12,10 +12,25 @@ body {
 /* Specific styles for Page 1 */
 #welcome {
     display: flex;
-    justify-content: center; /* Aligns content box to the center horizontally */
-    align-items: center; /* Aligns content box to the center vertically */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: #eeeeee; /* Grey background for Page 1 */
+    padding: 20px;
+    box-sizing: border-box;
+    background: url('https://github.com/Roland6321/Restaurant-console-NEW/blob/main/1_background.jpg?raw=true') no-repeat center center;
+    background-size: cover; /* Ensure the background covers the entire element */
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+
+#welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    z-index: 1; /* Ensure it's above the background image but below the content */
 }
 
 #welcome .content-box {
@@ -29,6 +44,9 @@ body {
     width: 100%;
     max-width: 400px; /* Adjust max-width as needed */
     box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    position: relative; /* Ensure the content box is above the overlay */
+    z-index: 2; /* Higher than the overlay's z-index */
 }
 
 #welcome h1,
@@ -42,9 +60,14 @@ body {
 }
 
 #welcome #submitBtn {
-    align-self: flex-end; /* Align button to the right */
-    padding: 10px 20px; /* Padding inside the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f9a825; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer;
     margin-top: 10px; /* Space above the button */
+    align-self: center; /* Center the button inside the flex container */
 }
 
 #welcome input[type="password"] {
