@@ -6,22 +6,20 @@ function showSection(sectionId) {
 
     // Show the requested section
     document.getElementById(sectionId).style.display = 'block';
-
-    // If showing active orders, refresh the orders display
-    if (sectionId === 'activeOrders') {
-        displayOrders();
-    }
 }
 
-// Sample mock orders data
+// Example order data to be dynamically displayed
 let orders = [
-    { id: 1, item: { name: "Pizza", price: 12, quantity: 1, extraIngredients: [{ name: "Olives" }], removedIngredients: ["Cheese"] }, dineOption: 'Dine In', customer: { name: "John Doe", email: "john@example.com", phone: "1234567890", tableNumber: "5" } },
-    { id: 2, item: { name: "Burger", price: 10, quantity: 2, extraIngredients: [{ name: "Bacon" }], removedIngredients: ["Onions"] }, dineOption: 'Take Away', customer: { name: "Jane Doe", email: "jane@example.com", phone: "0987654321", tableNumber: "N/A" } }
+    { id: 1, item: { name: "Pizza Margherita", price: 12.00, quantity: 1, extras: ["Olives", "Extra Cheese"], removed: [] }, dineOption: 'Dine In', customer: { name: "John Doe", email: "john.doe@example.com", phone: "123-456-7890", tableNumber: "21" } }
 ];
 
 function displayOrders() {
     const container = document.getElementById('activeOrders');
-    container.innerHTML = ''; // Clear current orders
+    // Ensure the menu and header are not re-created
+    container.innerHTML = `<div class="menu">
+        <div id="ordersBtn" class="menu-item active">Active Orders</div>
+        <div id="historyBtn" class="menu-item">Order History</div>
+    </div><h2>Active Orders</h2>`;
 
     orders.forEach(order => {
         const orderBox = document.createElement('div');
@@ -30,37 +28,17 @@ function displayOrders() {
             <h3>${order.item.name}</h3>
             <p>Price: $${order.item.price}</p>
             <p>Quantity: ${order.item.quantity}</p>
-            <p>Extras: ${order.item.extraIngredients.map(extra => extra.name).join(', ')}</p>
-            <p>Removed: ${order.item.removedIngredients.join(', ')}</p>
+            <p>Extras: ${order.item.extras.join(', ')}</p>
+            <p>Removed: ${order.item.removed.length > 0 ? order.item.removed.join(', ') : 'None'}</p>
             <p>Dine Option: ${order.dineOption}</p>
             <p>Name: ${order.customer.name}</p>
             <p>Email: ${order.customer.email}</p>
             <p>Phone: ${order.customer.phone}</p>
             <p>Table: ${order.customer.tableNumber}</p>
-            <button onclick="markOrderReady(${order.id})">Order Ready</button>
+            <button class="order-ready-btn">Order Ready</button>
         `;
         container.appendChild(orderBox);
     });
-}
-
-function markOrderReady(orderId) {
-    const index = orders.findIndex(order => order.id === orderId);
-    if (index !== -1) {
-        orders[index].status = 'completed';
-        displayOrders(); // Refresh active orders
-        addToOrderHistory(orders[index]); // Add to order history
-    }
-}
-
-function addToOrderHistory(order) {
-    const historyContainer = document.getElementById('orderHistory');
-    const orderElem = document.createElement('div');
-    orderElem.className = 'history-box';
-    orderElem.innerHTML = `
-        <p>Completed Order ID: ${order.id}</p>
-        <p>${order.item.details}</p>
-    `;
-    historyContainer.appendChild(orderElem);
 }
 
 document.getElementById('submitBtn').addEventListener('click', function() {
@@ -68,19 +46,19 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     document.getElementById('alert').style.display = 'none';
     if (password === '1234') {
         showSection('activeOrders');
+        displayOrders(); // Ensure orders are displayed when section is shown
     } else {
         document.getElementById('alert').style.display = 'block';
     }
 });
 
-
-// Setup event listeners for navigation
 document.getElementById('historyBtn').addEventListener('click', function() {
     showSection('orderHistory');
 });
 
-document.getElementById('ordersBtnHistory').addEventListener('click', function() {
+document.getElementById('ordersBtn').addEventListener('click', function() {
     showSection('activeOrders');
+    displayOrders(); // Refresh display when switching back to active orders
 });
 
 
