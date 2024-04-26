@@ -126,24 +126,35 @@ body {
     margin-top: 10px;
 }
 
+/* Style adjustments for order boxes */
 .order-box {
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px 0;
+    margin: 0 auto;
     background-color: #f9f9f9;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* Ensure positioning is relative to the order box */
+    max-width: 1200px;
+}
+
+.order-box::after {
+    content: "";
+    display: table;
+    clear: both; /* Clear the floats */
 }
 
 .order-box h3 {
     color: #333;
-    font-size: 1.2em;
+    font-size: 1.4em; /* Slightly larger font for better readability */
 }
 
 .order-box p {
     margin: 5px 0;
     color: #666;
+    font-size: 0.9em; /* Adjust the font size if necessary */
 }
 
+/* Adjustments to the 'Order Ready' button */
 .order-ready-btn {
     padding: 8px 16px;
     background-color: #4CAF50;
@@ -151,16 +162,47 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
-    margin-top: 10px;
+    position: absolute; /* Position the button absolutely within the order box */
+    right: 10px; /* 10px from the right */
+    bottom: 10px; /* 10px from the bottom */
 }
 
 .order-ready-btn:hover {
     background-color: #45a049;
 }
 
+/* Additional styles for customer info */
+.customer-info {
+    border-top: 1px solid #ddd; /* Adds a separator between the order items and customer info */
+    padding-top: 10px;
+    margin-top: 10px;
+}
 
+.page h2 {
+    text-align: center; /* Centers the text horizontally */
+    margin-top: 20px; /* Adjust the margin as needed */
+    margin-bottom: 20px; /* Provides some spacing between the title and the content below */
+}
 
+.title-container1 {
+    width: calc(100% - 20px); /* Full width minus the left and right margins */
+    margin: 10px; /* 10px margin on all sides */
+    padding: 10px; /* Padding inside the textbox */
+    box-sizing: border-box; /* Makes sure padding doesn't add to the width */
+    background-color: #f9f9f9; /* Background color for the textbox */
+    border: 2px solid #ffa616; /* Border for the textbox */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for some depth */
+}
+
+.title-container2 {
+    width: calc(100% - 20px); /* Full width minus the left and right margins */
+    margin: 10px; /* 10px margin on all sides */
+    padding: 10px; /* Padding inside the textbox */
+    box-sizing: border-box; /* Makes sure padding doesn't add to the width */
+    background-color: #f9f9f9; /* Background color for the textbox */
+    border: 2px solid #6991ff; /* Border for the textbox */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for some depth */
+}
 
 
 
