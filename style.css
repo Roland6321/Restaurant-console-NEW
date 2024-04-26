@@ -126,6 +126,38 @@ body {
     margin-top: 10px;
 }
 
+.order-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.order-box h3 {
+    color: #333;
+    font-size: 1.2em;
+}
+
+.order-box p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.order-ready-btn {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+}
+
+.order-ready-btn:hover {
+    background-color: #45a049;
+}
 
 
 
